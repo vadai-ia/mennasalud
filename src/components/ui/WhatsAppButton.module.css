@@ -17,12 +17,12 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
-  padding: 10px 16px;
+  padding: 12px 16px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  white-space: nowrap;
-  max-width: 260px;
-  /* Cola apuntando hacia el botón (derecha) */
+  white-space: normal;
+  width: 200px;
+  word-break: break-word;
   position: relative;
 }
 
@@ -75,8 +75,8 @@
 
   .label {
     font-size: 12px;
-    padding: 8px 12px;
-    max-width: 200px;
+    padding: 10px 14px;
+    width: 160px;
     border-radius: 10px;
   }
 
