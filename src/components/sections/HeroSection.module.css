@@ -191,7 +191,7 @@
 
   /* Image stays second */
   .imageWrapper {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 4 / 5;
   }
 
   .reviewCard {
