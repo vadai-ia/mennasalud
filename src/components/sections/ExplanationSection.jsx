@@ -80,7 +80,7 @@ export default function ExplanationSection() {
 
       <div className="container">
         <div className={styles.cta}>
-          <Button href="#agenda" size="lg" className={styles.ctaButton}>
+          <Button href="https://wa.me/525523114388" size="lg" className={styles.ctaButton}>
             Descubre qué está pasando
           </Button>
         </div>

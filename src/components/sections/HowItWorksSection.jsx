@@ -69,7 +69,7 @@ export default function HowItWorksSection() {
           </ol>
 
           <div className={styles.cta}>
-            <Button href="#agenda" size="lg">
+            <Button href="https://citas.mennasalud.com/book" size="lg">
               Agenda tu consulta
             </Button>
           </div>

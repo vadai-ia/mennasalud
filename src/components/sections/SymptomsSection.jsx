@@ -59,7 +59,7 @@ export default function SymptomsSection() {
 
         {/* CTA */}
         <div className={styles.cta}>
-          <Button href="#agenda" size="lg">
+          <Button href="https://citas.mennasalud.com/tienda" size="lg">
             Quiero entender qué me está pasando
           </Button>
         </div>

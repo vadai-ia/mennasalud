@@ -43,7 +43,7 @@ export default function HeroSection() {
 
           {/* CTA */}
           <div className={styles.actions}>
-            <Button href="#agenda" size="lg" className={styles.ctaButton}>
+            <Button href="https://citas.mennasalud.com/book" size="lg" className={styles.ctaButton}>
               Agenda tu consulta ahora&nbsp;→
             </Button>
           </div>
