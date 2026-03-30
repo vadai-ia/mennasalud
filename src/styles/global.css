@@ -1,0 +1,164 @@
+@import './tokens.css';
+
+/* ─────────────────────────────────────────
+   RESET & BASE
+   ───────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  background-color: var(--color-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY HELPERS
+   ───────────────────────────────────────── */
+
+.h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 5vw, var(--text-h1));
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-primary);
+}
+
+.h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, var(--text-h2));
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-primary);
+}
+
+.h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.5vw, var(--text-h3));
+  font-weight: 500;
+  line-height: var(--leading-tight);
+  color: var(--color-primary);
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  max-width: var(--max-readable);
+}
+
+.small-text {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+  color: var(--color-text-80);
+}
+
+/* On primary bg */
+.on-primary .h1,
+.on-primary .h2,
+.on-primary .h3 {
+  color: var(--color-white-100);
+}
+
+.on-primary .body-text {
+  color: var(--color-white-80);
+}
+
+.on-primary .small-text {
+  color: var(--color-white-60);
+}
+
+/* ─────────────────────────────────────────
+   LAYOUT HELPERS
+   ───────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.section-header .h2 {
+  margin-bottom: var(--space-md);
+}
+
+.section-header .body-text {
+  color: var(--color-text-80);
+}
+
+/* ─────────────────────────────────────────
+   STAR RATING
+   ───────────────────────────────────────── */
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #F5A623;
+}
+
+.stars svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}

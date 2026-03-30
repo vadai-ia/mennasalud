@@ -1,0 +1,154 @@
+/* Fixed transparent shell — removed from flow so hero extends behind it */
+.header {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-inline: 100px;
+  pointer-events: none;
+}
+
+/* Visible floating container */
+.floatingBar {
+  pointer-events: auto;
+  background-color: var(--color-base);
+  border-radius: var(--radius-md); /* 20px */
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+/* Bottom corners stay rounded when mobile menu is closed;
+   flatten only visually — overflow:hidden on floatingBar handles clipping */
+.floatingBar.menuOpen {
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+/* Row inside the bar */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding-inline: var(--space-xl);
+  gap: var(--space-xl);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  height: 30px;
+  width: auto;
+  display: block;
+}
+
+/* Desktop nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.cta {
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Mobile menu — inside the floating bar */
+.mobileMenu {
+  border-top: 1px solid var(--border-light);
+  padding: var(--space-md) var(--space-xl) var(--space-xl);
+}
+
+.mobileLink {
+  display: block;
+  font-size: var(--text-body);
+  color: var(--color-text);
+  padding-block: 12px;
+  border-bottom: 1px solid var(--border-light);
+  transition: color var(--transition-fast);
+}
+
+.mobileLink:hover {
+  color: var(--color-primary);
+}
+
+.mobileCta {
+  margin-top: var(--space-lg);
+}
+
+/* ─── Responsive ──────────────────────────────── */
+
+/* Tablet: reduce side margin */
+@media (max-width: 1100px) {
+  .header {
+    padding-inline: 40px;
+  }
+}
+
+/* Mobile: 14px from top, minimal side margin, show hamburger */
+@media (max-width: 900px) {
+  .header {
+    top: 14px;
+    padding-inline: 16px;
+  }
+
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Slightly smaller logo on mobile — SVG stays sharp at any size */
+  .logoImg {
+    height: 24px;
+  }
+
+  /* Slightly smaller hamburger bars */
+  .bar {
+    width: 18px;
+  }
+}

@@ -1,0 +1,150 @@
+/* ── Section ──────────────────────────────────────────── */
+.section {
+  background-color: var(--color-primary);
+  padding-block: var(--space-section);
+  overflow: hidden;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-white-100);
+  max-width: 640px;
+}
+
+.headingEmphasis {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 560px;
+}
+
+.handle {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Scroll wrapper ───────────────────────────────────── */
+.scrollWrapper {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Cards grid ───────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* ── Thumbnail image ──────────────────────────────────── */
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Play icon overlay ────────────────────────────────── */
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Subtle dark gradient at bottom for visual depth */
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card:hover .playOverlay {
+  opacity: 1;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  /* Break out of container for edge-to-edge scroll */
+  .scrollWrapper {
+    max-width: 100%;
+    padding-inline: 0;
+  }
+
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--container-px);
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex-shrink: 0;
+    /* One card + peek of next */
+    width: 72vw;
+    scroll-snap-align: start;
+  }
+
+  /* Always show play icon on mobile (no hover) */
+  .playOverlay {
+    opacity: 1;
+    background: transparent;
+  }
+}

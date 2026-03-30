@@ -1,0 +1,57 @@
+/* ── Ribbon container — full viewport width ───────────── */
+.ribbon {
+  background-color: var(--color-primary);
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* Break out of any parent padding */
+  width: 100%;
+}
+
+/* ── Moving wrapper — holds two identical tracks ──────── */
+.wrapper {
+  display: flex;
+  width: max-content;
+  /* Scroll right-to-left at an editorial pace (~40s per full cycle) */
+  animation: marquee 70s linear infinite;
+  will-change: transform;
+}
+
+/* ── Single text track ────────────────────────────────── */
+.track {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-secondary);
+  white-space: nowrap;
+  /* Small gap between the two tracks so the seam is invisible */
+  padding-right: 2em;
+  line-height: 1;
+}
+
+/* ── Keyframe ─────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pause only if user has requested reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .wrapper {
+    animation: none;
+  }
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .ribbon {
+    height: 56px;
+  }
+
+  .track {
+    font-size: 26px;
+    padding-right: 1.5em;
+  }
+}

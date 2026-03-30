@@ -1,0 +1,209 @@
+/* ── Section ─────────────────────────────────── */
+.hero {
+  background-color: var(--color-primary);
+  /* top: clears fixed navbar (24px gap + 64px pill + 32px breath = 120px) */
+  padding-top: 120px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+/* ── Two-column grid ──────────────────────────── */
+.inner {
+  display: grid;
+  grid-template-columns: 44fr 56fr;
+  gap: 56px;
+  align-items: center;
+  min-height: 540px;
+}
+
+/* ── Left: Copy column ────────────────────────── */
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Eyebrow */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Heading — capped at 54px so "Entiende tu cuerpo." stays on one line */
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--color-white-100);
+  margin: 0;
+}
+
+/* Semibold italic: "sentirte bien." */
+.headingBoldItalic {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-white-100);
+}
+
+/* Body */
+.body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 400px;
+}
+
+/* CTA row */
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+/* White button override — inverse style for primary bg */
+.ctaButton {
+  background-color: var(--color-white-100) !important;
+  color: var(--color-primary) !important;
+  border-color: var(--color-white-100) !important;
+  font-weight: 500;
+}
+
+.ctaButton:hover {
+  background-color: var(--color-white-90) !important;
+  border-color: var(--color-white-90) !important;
+}
+
+.ctaButton:active {
+  background-color: var(--color-white-80) !important;
+  border-color: var(--color-white-80) !important;
+}
+
+/* Microcopy */
+.microcopy {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1;
+}
+
+/* ── Right: Image column ──────────────────────── */
+.imageWrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible; /* allows review card to bleed out */
+  aspect-ratio: 5 / 5.5;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+/* Review card — floating at bottom-left of the image */
+.reviewCard {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  background-color: var(--color-white-100);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 200px;
+  z-index: 2;
+}
+
+.reviewStars {
+  display: flex;
+  gap: 2px;
+  color: #F5A623;
+}
+
+.reviewText {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* ── Responsive ───────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .hero {
+    padding-top: 110px;
+  }
+}
+
+/* Mobile — navbar is at top:14px + 64px pill = 78px bottom edge */
+@media (max-width: 900px) {
+  .hero {
+    /* 120px top: 78px navbar bottom + ~42px breathing room */
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    min-height: auto;
+  }
+
+  .copy {
+    gap: 20px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+  }
+
+  .heading {
+    font-size: 39px;
+    line-height: 1.1;
+  }
+
+  .body {
+    font-size: 14px;
+    font-weight: 300;
+    max-width: 100%;
+  }
+
+  .ctaButton {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Image stays second */
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .reviewCard {
+    bottom: -12px;
+    left: 12px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 48px;
+  }
+}

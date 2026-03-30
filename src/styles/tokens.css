@@ -1,0 +1,75 @@
+/* ─────────────────────────────────────────
+   MENNA DESIGN TOKENS
+   ───────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --color-primary: #497975;
+  --color-secondary: #EAE0D7;
+  --color-base: #FFFFFF;
+  --color-text: #45556C;
+
+  /* Primary opacity scale */
+  --color-primary-90: rgba(73, 121, 117, 0.90);
+  --color-primary-80: rgba(73, 121, 117, 0.80);
+  --color-primary-60: rgba(73, 121, 117, 0.60);
+  --color-primary-40: rgba(73, 121, 117, 0.40);
+  --color-primary-20: rgba(73, 121, 117, 0.20);
+  --color-primary-10: rgba(73, 121, 117, 0.10);
+  --color-primary-05: rgba(73, 121, 117, 0.05);
+
+  /* White opacity scale */
+  --color-white-100: rgba(255, 255, 255, 1);
+  --color-white-90:  rgba(255, 255, 255, 0.90);
+  --color-white-80:  rgba(255, 255, 255, 0.80);
+  --color-white-60:  rgba(255, 255, 255, 0.60);
+
+  /* Text opacity */
+  --color-text-80: rgba(69, 85, 108, 0.80);
+  --color-text-60: rgba(69, 85, 108, 0.60);
+
+  /* Borders */
+  --border-light: rgba(73, 121, 117, 0.12);
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --text-h1: 56px;
+  --text-h2: 36px;
+  --text-h3: 26px;
+  --text-body: 16px;
+  --text-small: 13px;
+
+  --leading-tight: 1.1;
+  --leading-normal: 1.4;
+
+  --max-readable: 620px;
+
+  /* Spacing */
+  --space-xs:      4px;
+  --space-sm:      8px;
+  --space-md:      16px;
+  --space-lg:      24px;
+  --space-xl:      40px;
+  --space-2xl:     64px;
+  --space-section: 120px;
+
+  /* Grid */
+  --container-max: 1280px;
+  --container-px:  24px;
+  --grid-gap:      24px;
+
+  /* Border radius */
+  --radius-lg: 40px;
+  --radius-md: 20px;
+  --radius-sm: 10px;
+
+  /* Shadow */
+  --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+  /* Transitions */
+  --transition-fast:   0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow:   0.5s ease;
+}

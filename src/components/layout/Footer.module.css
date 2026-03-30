@@ -1,0 +1,85 @@
+.footer {
+  background-color: var(--color-primary);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr auto;
+  gap: var(--space-2xl);
+  align-items: start;
+  padding-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.tagline {
+  font-size: var(--text-small);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 240px;
+  line-height: var(--leading-normal);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+}
+
+.link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-white-100);
+}
+
+.social {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.socialLink {
+  color: var(--color-white-100);
+  transition: opacity var(--transition-fast);
+}
+
+.socialLink:hover {
+  opacity: 0.7;
+}
+
+.bottom {
+  padding-top: var(--space-lg);
+}
+
+.copy {
+  font-size: var(--text-small);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}

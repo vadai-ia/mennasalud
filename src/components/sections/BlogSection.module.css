@@ -1,0 +1,111 @@
+.section {
+  background-color: var(--color-base);
+}
+
+.header {
+  margin-bottom: var(--space-2xl);
+  max-width: 560px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-lg);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background-color: var(--color-base);
+  border: 1px solid var(--border-light);
+  transition: transform var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.cardImage {
+  aspect-ratio: 4 / 5;
+  background-color: var(--color-secondary);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+}
+
+.cardTag {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white-100);
+  font-size: var(--text-small);
+  font-weight: 500;
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-lg);
+}
+
+.cardBody {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: var(--leading-tight);
+}
+
+.cardExcerpt {
+  font-size: var(--text-small);
+  color: var(--color-text-80);
+  line-height: var(--leading-normal);
+  flex: 1;
+}
+
+.readMore {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: opacity var(--transition-fast);
+}
+
+.readMore:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Horizontal scroll on mobile */
+  .grid {
+    grid-template-columns: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
+  .card {
+    flex-shrink: 0;
+    width: 280px;
+    scroll-snap-align: start;
+  }
+}

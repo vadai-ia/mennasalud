@@ -1,0 +1,160 @@
+/* ── Section ──────────────────────────────────────────── */
+.section {
+  background-color: var(--color-base);
+  padding-block: var(--space-section);
+}
+
+/* ── Two-column layout ────────────────────────────────── */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left: image ──────────────────────────────────────── */
+.imageWrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.howImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* ── Right: content ───────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Heading ──────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-primary);
+}
+
+.headingEmphasis {
+  font-style: italic;
+  font-weight: 600;
+  display: block; /* pushes "más fácil..." to its own line like Figma */
+}
+
+/* ── Steps list ───────────────────────────────────────── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+/* ── Single step row ──────────────────────────────────── */
+.step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── Left rail: circle + connector ───────────────────── */
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Stretches to full row height so connector fills the gap */
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* Numbered circle */
+.circle {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-primary);
+  background-color: var(--color-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleNum {
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+/* Vertical connector between circles */
+.connector {
+  width: 1px;
+  flex: 1;
+  min-height: 28px;
+  background-color: var(--color-primary-20);
+  margin-block: 6px;
+}
+
+/* ── Step text ────────────────────────────────────────── */
+.stepBody {
+  padding-top: 12px;   /* vertically centers text with circle */
+  padding-bottom: 20px; /* gap before next step */
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.step:last-child .stepBody {
+  padding-bottom: 0;
+}
+
+.stepLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+.stepNote {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-text-60);
+  line-height: 1.4;
+}
+
+/* ── CTA ──────────────────────────────────────────────── */
+.cta {
+  display: flex;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .section {
+    padding-block: 80px;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cta {
+    /* Full width button on mobile */
+    flex-direction: column;
+  }
+}

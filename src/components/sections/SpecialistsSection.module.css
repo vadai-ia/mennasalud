@@ -1,0 +1,157 @@
+/* ── Section ──────────────────────────────────────────── */
+.section {
+  background-color: var(--color-secondary);
+  padding-block: var(--space-section);
+  overflow: hidden;
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.header {
+  margin-bottom: var(--space-2xl);
+  max-width: 560px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/* ── Scroll wrapper — desktop: constrained, mobile: full bleed */
+.scrollWrapper {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* ── Grid — 5 cards, centradas en desktop ─────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Card ─────────────────────────────────────────────── */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background-color: var(--color-base);
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ── Photo ────────────────────────────────────────────── */
+.photo {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ── Country pill — absolute over photo ───────────────── */
+.countryTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-base);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: 100px;
+}
+
+/* ── Info block ───────────────────────────────────────── */
+.info {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: var(--leading-tight);
+}
+
+.specialty {
+  font-size: var(--text-small);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.bio {
+  font-size: var(--text-small);
+  color: var(--color-text-80);
+  line-height: var(--leading-normal);
+}
+
+/* ── CTA ──────────────────────────────────────────────── */
+.cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+/* 5 cards → 3 columnas en tablet grande */
+@media (max-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2 columnas en tablet */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+
+  /* Break out of container so cards scroll edge-to-edge */
+  .scrollWrapper {
+    max-width: 100%;
+    padding-inline: 0;
+  }
+
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: var(--container-px);
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+    padding-bottom: 8px;
+    margin-bottom: 40px;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    flex-shrink: 0;
+    width: 78vw;
+    scroll-snap-align: start;
+  }
+}

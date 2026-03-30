@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #F5A623;
+}
+
+.stars svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.count {
+  font-size: var(--text-small);
+  color: var(--color-text-80);
+}

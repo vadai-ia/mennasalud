@@ -1,0 +1,51 @@
+/* ── Section ──────────────────────────────────────────── */
+.section {
+  background-color: var(--color-secondary);
+  padding-block: var(--space-section);
+}
+
+/* ── Centered editorial block ─────────────────────────── */
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  max-width: 640px;
+}
+
+/* ── Heading ──────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.headingEmphasis {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ── Body paragraphs ──────────────────────────────────── */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding-block: 80px;
+  }
+
+  .inner {
+    gap: 20px;
+  }
+}

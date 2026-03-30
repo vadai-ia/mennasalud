@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.image {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .image {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    object-position: center;
+  }
+}

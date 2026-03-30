@@ -1,0 +1,118 @@
+/* ── Section ──────────────────────────────────────────── */
+.section {
+  background-color: var(--color-base);
+}
+
+/* ── Header ───────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.headingEmphasis {
+  font-style: italic;
+}
+
+/* ── Accordion list ───────────────────────────────────── */
+.list {
+  max-width: 720px;
+  margin-inline: auto;
+  border-top: 1px solid rgba(69, 85, 108, 0.15);
+}
+
+/* ── Single item ──────────────────────────────────────── */
+.item {
+  border-bottom: 1px solid rgba(69, 85, 108, 0.15);
+}
+
+/* ── Question button ──────────────────────────────────── */
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-primary);
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: opacity var(--transition-fast);
+}
+
+.question:hover {
+  opacity: 0.75;
+}
+
+/* ── Chevron ──────────────────────────────────────────── */
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: transform 0.25s ease;
+}
+
+.open .chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Answer — CSS height animation ───────────────────── */
+.answerWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.2s ease-out;
+}
+
+.open .answerWrapper {
+  grid-template-rows: 1fr;
+}
+
+.answer {
+  /* Required for grid 0fr collapse to work */
+  min-height: 0;
+  overflow: hidden;
+}
+
+.answerInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: var(--leading-normal);
+  color: var(--color-text-80);
+  padding-bottom: 20px;
+}
+
+/* ── Dash list inside answer ──────────────────────────── */
+.answerList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 4px;
+}
+
+.answerList li::before {
+  content: '– ';
+  color: var(--color-primary);
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .question {
+    font-size: 15px;
+    padding: 18px 0;
+  }
+}
