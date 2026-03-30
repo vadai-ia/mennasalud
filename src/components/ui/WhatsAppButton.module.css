@@ -1,20 +1,54 @@
-.button {
+/* ── Wrapper — posición fija, contiene label + botón ──── */
+.wrapper {
   position: fixed;
   bottom: 28px;
   right: 28px;
   z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
+/* ── Burbuja de texto ─────────────────────────────────── */
+.label {
+  background-color: #ffffff;
+  color: #2d2d2d;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  max-width: 260px;
+  /* Cola apuntando hacia el botón (derecha) */
+  position: relative;
+}
+
+.label::after {
+  content: '';
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 7px 0 7px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+/* ── Botón circular ───────────────────────────────────── */
+.button {
   width: 56px;
   height: 56px;
   border-radius: 50%;
   background-color: #25D366;
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-
+  flex-shrink: 0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: pulse 3.5s ease-in-out infinite;
 }
@@ -25,20 +59,30 @@
   animation-play-state: paused;
 }
 
-/* Subtle pulse every ~3.5 seconds */
 @keyframes pulse {
   0%   { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
   50%  { box-shadow: 0 4px 24px rgba(37, 211, 102, 0.65), 0 0 0 8px rgba(37, 211, 102, 0.08); }
   100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4); }
 }
 
-/* Mobile: slightly smaller, higher above bottom safe area */
+/* ── Mobile ───────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .wrapper {
+    bottom: 20px;
+    right: 16px;
+    gap: 8px;
+  }
+
+  .label {
+    font-size: 12px;
+    padding: 8px 12px;
+    max-width: 200px;
+    border-radius: 10px;
+  }
+
   .button {
     width: 50px;
     height: 50px;
-    bottom: 20px;
-    right: 20px;
   }
 
   .button svg {
