@@ -24,14 +24,14 @@ export default function HeroSection() {
 
           {/* Eyebrow */}
           <p className={styles.eyebrow}>
-            Especialistas en menopausia y perimenopausia
+            Vuelve a sentirte bien
           </p>
 
           {/* Heading */}
           <h1 className={styles.heading}>
-            Entiende tu cuerpo.<br />
-            Vuelve a{' '}
-            <em className={styles.headingBoldItalic}>sentirte<br />bien.</em>
+            Especialistas en menopausia<br />
+            y{' '}
+            <em className={styles.headingBoldItalic}>perimenopausia</em>
           </h1>
 
           {/* Body */}
