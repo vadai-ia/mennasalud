@@ -24,7 +24,7 @@ export default function HeroSection() {
 
           {/* Eyebrow */}
           <p className={styles.eyebrow}>
-            Especialistas en menopausia y salud femenina
+            Especialistas en menopausia y perimenopausia
           </p>
 
           {/* Heading */}
