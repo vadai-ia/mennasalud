@@ -3,6 +3,13 @@ import styles from './FAQSection.module.css'
 
 const faqs = [
   {
+    q: '¿Qué es Menna?',
+    content: [
+      { type: 'p', text: 'Menna es una plataforma digital de referencia médica en salud hormonal femenina que facilita el acceso a especialistas capacitados en menopausia y bienestar hormonal.' },
+      { type: 'p', text: 'A través de Menna puedes recibir orientación, seguimiento y ser canalizada con profesionales que pueden acompañarte según la etapa que estés viviendo, de forma clara, confiable y segura.' },
+    ],
+  },
+  {
     q: '¿Qué tipo de tratamientos se utilizan?',
     content: [
       { type: 'p', text: 'Trabajamos con tratamientos personalizados basados en evidencia científica y en las necesidades específicas de cada mujer.' },
