@@ -5,8 +5,8 @@ import reel3 from '../../assets/Images/reels/reel-3.jpg'
 import reel4 from '../../assets/Images/reels/reel-4.jpg'
 
 const reels = [
-  { id: 1, thumbnail: reel1, href: 'https://www.instagram.com/reel/DWHhdJbCAsQ/' },
-  { id: 2, thumbnail: reel2, href: 'https://www.instagram.com/reel/DVtw8XViewI/' },
+  { id: 1, thumbnail: reel2, href: 'https://www.instagram.com/reel/DVtw8XViewI/' },
+  { id: 2, thumbnail: reel1, href: 'https://www.instagram.com/reel/DWHhdJbCAsQ/' },
   { id: 3, thumbnail: reel3, href: 'https://www.instagram.com/reel/DVbu2HhCaHE/' },
   { id: 4, thumbnail: reel4, href: 'https://www.instagram.com/reel/DVZKYDmFDgw/' },
 ]
