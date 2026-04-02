@@ -1,7 +1,8 @@
 /* ── Section ──────────────────────────────────────────── */
 .section {
   background-color: var(--color-primary);
-  padding-block: var(--space-section);
+  padding-top: var(--space-section);
+  padding-bottom: 48px;
   overflow: hidden;
 }
 
@@ -105,7 +106,8 @@
 /* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 768px) {
   .section {
-    padding-block: 80px;
+    padding-top: 60px;
+    padding-bottom: 32px;
   }
 
   .header {
