@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useCallback } from 'react'
 import StarRating from '../ui/StarRating'
 import styles from './SpecialistsSection.module.css'
 import imgDaniaGalvez from '../../assets/Images/doctors/Dania-Galvez.jpg'
@@ -67,6 +67,9 @@ const specialists = [
 
 export default function SpecialistsSection() {
   const gridRef = useRef(null)
+  const isDragging = useRef(false)
+  const startX = useRef(0)
+  const scrollLeft = useRef(0)
 
   const scroll = (direction) => {
     const grid = gridRef.current
@@ -76,6 +79,29 @@ export default function SpecialistsSection() {
     const amount = (cardWidth + gap) * 2
     grid.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' })
   }
+
+  const onMouseDown = useCallback((e) => {
+    const grid = gridRef.current
+    isDragging.current = true
+    startX.current = e.pageX - grid.offsetLeft
+    scrollLeft.current = grid.scrollLeft
+    grid.style.cursor = 'grabbing'
+  }, [])
+
+  const onMouseMove = useCallback((e) => {
+    if (!isDragging.current) return
+    e.preventDefault()
+    const grid = gridRef.current
+    const x = e.pageX - grid.offsetLeft
+    const walk = (x - startX.current) * 1.5
+    grid.scrollLeft = scrollLeft.current - walk
+  }, [])
+
+  const onMouseUp = useCallback(() => {
+    isDragging.current = false
+    const grid = gridRef.current
+    if (grid) grid.style.cursor = 'grab'
+  }, [])
 
   return (
     <section className={`section ${styles.section}`} id="especialistas">
@@ -95,7 +121,14 @@ export default function SpecialistsSection() {
 
       {/* Scroll wrapper */}
       <div className={styles.scrollWrapper}>
-        <div className={styles.grid} ref={gridRef}>
+        <div
+          className={styles.grid}
+          ref={gridRef}
+          onMouseDown={onMouseDown}
+          onMouseMove={onMouseMove}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseUp}
+        >
           {specialists.map((doc) => (
             <article key={doc.id} className={styles.card}>
               <img
