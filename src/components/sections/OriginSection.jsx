@@ -1,4 +1,5 @@
 import styles from './OriginSection.module.css'
+import fundadora from '../../assets/Images/originsection/fundadora.png'
 
 export default function OriginSection() {
   return (
@@ -7,8 +8,11 @@ export default function OriginSection() {
 
         {/* ── Left: portrait image ── */}
         <div className={styles.imageWrapper}>
-          {/* Replace with <img> once Figma asset is exported */}
-          <div className={styles.imagePlaceholder} aria-hidden="true" />
+          <img
+            src={fundadora}
+            alt="Adriana Mont, fundadora de Menna"
+            className={styles.image}
+          />
         </div>
 
         {/* ── Right: editorial text ── */}

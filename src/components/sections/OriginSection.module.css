@@ -21,11 +21,12 @@
   width: 100%;
 }
 
-/* Placeholder — swap for <img> when asset is ready */
-.imagePlaceholder {
+.image {
   width: 100%;
   height: 100%;
-  background-color: var(--color-primary-20);
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 /* ── Right: copy ──────────────────────────────────────── */
