@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react'
+import { useRef } from 'react'
 import StarRating from '../ui/StarRating'
 import styles from './SpecialistsSection.module.css'
 import imgDaniaGalvez from '../../assets/Images/doctors/Dania-Galvez.jpg'
@@ -67,41 +67,15 @@ const specialists = [
 
 export default function SpecialistsSection() {
   const gridRef = useRef(null)
-  const isDragging = useRef(false)
-  const startX = useRef(0)
-  const scrollLeft = useRef(0)
 
   const scroll = (direction) => {
     const grid = gridRef.current
     if (!grid) return
-    const cardWidth = grid.querySelector(`.${styles.card}`)?.offsetWidth || 260
-    const gap = 24
+    const cardWidth = grid.querySelector(`.${styles.card}`)?.offsetWidth || 220
+    const gap = 20
     const amount = (cardWidth + gap) * 2
     grid.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' })
   }
-
-  const onMouseDown = useCallback((e) => {
-    const grid = gridRef.current
-    isDragging.current = true
-    startX.current = e.pageX - grid.offsetLeft
-    scrollLeft.current = grid.scrollLeft
-    grid.style.cursor = 'grabbing'
-  }, [])
-
-  const onMouseMove = useCallback((e) => {
-    if (!isDragging.current) return
-    e.preventDefault()
-    const grid = gridRef.current
-    const x = e.pageX - grid.offsetLeft
-    const walk = (x - startX.current) * 1.5
-    grid.scrollLeft = scrollLeft.current - walk
-  }, [])
-
-  const onMouseUp = useCallback(() => {
-    isDragging.current = false
-    const grid = gridRef.current
-    if (grid) grid.style.cursor = 'grab'
-  }, [])
 
   return (
     <section className={`section ${styles.section}`} id="especialistas">
@@ -119,16 +93,20 @@ export default function SpecialistsSection() {
         </div>
       </div>
 
-      {/* Scroll wrapper */}
-      <div className={styles.scrollWrapper}>
-        <div
-          className={styles.grid}
-          ref={gridRef}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
-          onMouseLeave={onMouseUp}
+      <div className={styles.carouselWrapper}>
+        {/* Left arrow — desktop only */}
+        <button
+          className={`${styles.navBtn} ${styles.navLeft}`}
+          onClick={() => scroll('left')}
+          aria-label="Anterior"
         >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        {/* Cards */}
+        <div className={styles.grid} ref={gridRef}>
           {specialists.map((doc) => (
             <article key={doc.id} className={styles.card}>
               <img
@@ -148,27 +126,16 @@ export default function SpecialistsSection() {
           ))}
         </div>
 
-        {/* Navigation arrows — desktop only */}
-        <div className={styles.nav}>
-          <button
-            className={styles.navBtn}
-            onClick={() => scroll('left')}
-            aria-label="Anterior"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <button
-            className={styles.navBtn}
-            onClick={() => scroll('right')}
-            aria-label="Siguiente"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 6 15 12 9 18" />
-            </svg>
-          </button>
-        </div>
+        {/* Right arrow — desktop only */}
+        <button
+          className={`${styles.navBtn} ${styles.navRight}`}
+          onClick={() => scroll('right')}
+          aria-label="Siguiente"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
+        </button>
       </div>
 
     </section>

@@ -15,34 +15,29 @@
   font-style: italic;
 }
 
-/* ── Scroll wrapper — horizontal scroll en todas las resoluciones */
-.scrollWrapper {
+/* ── Carousel wrapper — arrows + cards side by side ───── */
+.carouselWrapper {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
-/* ── Grid — scroll horizontal, tarjetas de tamaño fijo ── */
+/* ── Grid — hidden overflow, no manual scroll on desktop */
 .grid {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: var(--space-lg);
-  padding-bottom: 8px;
-  margin-bottom: var(--space-2xl);
-  scrollbar-width: none;
-  cursor: grab;
-}
-
-.grid::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
 }
 
 /* ── Card ─────────────────────────────────────────────── */
 .card {
   flex-shrink: 0;
-  width: 260px;
+  width: calc((100% - 80px) / 5);
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -111,14 +106,7 @@
   line-height: var(--leading-normal);
 }
 
-/* ── Navigation arrows ───────────────────────────────── */
-.nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  margin-top: 24px;
-}
-
+/* ── Navigation arrows — at sides of carousel ────────── */
 .navBtn {
   width: 44px;
   height: 44px;
@@ -130,6 +118,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-shrink: 0;
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -144,25 +133,35 @@
     padding-block: 80px;
   }
 
-  /* Break out of container so cards scroll edge-to-edge */
-  .scrollWrapper {
+  /* Hide arrows on mobile — touch scroll instead */
+  .navBtn {
+    display: none;
+  }
+
+  /* Full-bleed scroll on mobile */
+  .carouselWrapper {
     max-width: 100%;
     padding-inline: 0;
+    gap: 0;
   }
 
   .grid {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     scroll-padding-left: var(--container-px);
+    -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding-left: var(--container-px);
     padding-right: var(--container-px);
-    margin-bottom: 40px;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
   }
 
   .card {
     width: 78vw;
-  }
-
-  .nav {
-    display: none;
   }
 }
