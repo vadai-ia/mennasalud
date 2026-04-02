@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import StarRating from '../ui/StarRating'
 import styles from './SpecialistsSection.module.css'
 import imgDaniaGalvez from '../../assets/Images/doctors/Dania-Galvez.jpg'
@@ -65,6 +66,17 @@ const specialists = [
 ]
 
 export default function SpecialistsSection() {
+  const gridRef = useRef(null)
+
+  const scroll = (direction) => {
+    const grid = gridRef.current
+    if (!grid) return
+    const cardWidth = grid.querySelector(`.${styles.card}`)?.offsetWidth || 260
+    const gap = 24
+    const amount = (cardWidth + gap) * 2
+    grid.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' })
+  }
+
   return (
     <section className={`section ${styles.section}`} id="especialistas">
       <div className="container">
@@ -81,23 +93,18 @@ export default function SpecialistsSection() {
         </div>
       </div>
 
-      {/* Scroll wrapper breaks out of container on mobile */}
+      {/* Scroll wrapper */}
       <div className={styles.scrollWrapper}>
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={gridRef}>
           {specialists.map((doc) => (
             <article key={doc.id} className={styles.card}>
-              {/* Photo */}
               <img
                 src={doc.photo}
                 alt={doc.name}
                 className={styles.photo}
                 loading="lazy"
               />
-
-              {/* Country pill */}
               <span className={styles.countryTag}>{doc.country}</span>
-
-              {/* Info */}
               <div className={styles.info}>
                 <h3 className={styles.name}>{doc.name}</h3>
                 <p className={styles.specialty}>{doc.specialty}</p>
@@ -106,6 +113,28 @@ export default function SpecialistsSection() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Navigation arrows — desktop only */}
+        <div className={styles.nav}>
+          <button
+            className={styles.navBtn}
+            onClick={() => scroll('left')}
+            aria-label="Anterior"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+          <button
+            className={styles.navBtn}
+            onClick={() => scroll('right')}
+            aria-label="Siguiente"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
+          </button>
         </div>
       </div>
 

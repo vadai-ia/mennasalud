@@ -110,10 +110,31 @@
   line-height: var(--leading-normal);
 }
 
-/* ── CTA ──────────────────────────────────────────────── */
-.cta {
+/* ── Navigation arrows ───────────────────────────────── */
+.nav {
   display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navBtn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-base);
 }
 
 /* ── Responsive ───────────────────────────────────────── */
@@ -138,5 +159,9 @@
 
   .card {
     width: 78vw;
+  }
+
+  .nav {
+    display: none;
   }
 }
