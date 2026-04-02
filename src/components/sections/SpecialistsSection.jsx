@@ -10,7 +10,7 @@ const specialists = [
   {
     id: 1,
     name: 'Dra. Dania Gálvez',
-    specialty: 'Ginecóloga',
+    specialty: 'Ginecología y Urología Ginecológica',
     country: 'México',
     rating: 4.8,
     bio: 'Especialista en menopausia y cuidado femenino. Te acompaño en un espacio profesional, humano y seguro en cada etapa de tu vida. Mi enfoque está en escucharte, ayudarte a sentirte mejor y cuidar tu salud hormonal con atención especializada y personalizada.',
@@ -19,7 +19,7 @@ const specialists = [
   {
     id: 2,
     name: 'Dra. Diana Chacón',
-    specialty: 'Ginecóloga',
+    specialty: 'Ginecología y Obstetricia',
     country: 'Colombia',
     rating: 4.8,
     bio: 'Ginecóloga experta en menopausia, apasionada por el bienestar integral de la mujer en esta etapa de la vida. Acompaño a mis pacientes con un enfoque humano, actualizado y personalizado, brindando herramientas para vivir una menopausia saludable, plena y con calidad de vida.',
@@ -28,7 +28,7 @@ const specialists = [
   {
     id: 3,
     name: 'Dra. Elena González',
-    specialty: 'Ginecóloga',
+    specialty: 'Ginecología y Urología Ginecológica',
     country: 'México',
     rating: 4.8,
     bio: 'Ginecóloga y especialista en Urología Ginecológica. Acompaño a la mujer en cada etapa de su vida, con especial enfoque en la menopausia y el bienestar íntimo. Experta en piso pélvico, incontinencia urinaria y salud urogenital. Atención integral, cercana y basada en evidencia.',
