@@ -58,7 +58,7 @@ const specialists = [
     id: 6,
     name: 'Dra. María Victoria',
     specialty: 'Ginecología',
-    country: 'México',
+    country: 'Ecuador',
     rating: 4.8,
     bio: 'Dedicada al cuidado integral de la mujer, con un enfoque cercano y empático en cada consulta.',
     photo: imgMariaVictoria,
