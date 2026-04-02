@@ -15,23 +15,34 @@
   font-style: italic;
 }
 
-/* ── Scroll wrapper — desktop: constrained, mobile: full bleed */
+/* ── Scroll wrapper — horizontal scroll en todas las resoluciones */
 .scrollWrapper {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-px);
 }
 
-/* ── Grid — 5 cards, centradas en desktop ─────────────── */
+/* ── Grid — scroll horizontal, tarjetas de tamaño fijo ── */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   gap: var(--space-lg);
+  padding-bottom: 8px;
   margin-bottom: var(--space-2xl);
+  scrollbar-width: none;
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
 }
 
 /* ── Card ─────────────────────────────────────────────── */
 .card {
+  flex-shrink: 0;
+  width: 260px;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
@@ -106,20 +117,6 @@
 }
 
 /* ── Responsive ───────────────────────────────────────── */
-/* 5 cards → 3 columnas en tablet grande */
-@media (max-width: 1280px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* 2 columnas en tablet */
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .section {
     padding-block: 80px;
@@ -132,26 +129,14 @@
   }
 
   .grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     scroll-padding-left: var(--container-px);
-    -webkit-overflow-scrolling: touch;
     gap: 16px;
     padding-left: var(--container-px);
     padding-right: var(--container-px);
-    padding-bottom: 8px;
     margin-bottom: 40px;
-    scrollbar-width: none;
-  }
-
-  .grid::-webkit-scrollbar {
-    display: none;
   }
 
   .card {
-    flex-shrink: 0;
     width: 78vw;
-    scroll-snap-align: start;
   }
 }

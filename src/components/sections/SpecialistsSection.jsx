@@ -5,6 +5,7 @@ import imgDianaChacon from '../../assets/Images/doctors/Diana-Chacon.jpg'
 import imgElenaGonzalez from '../../assets/Images/doctors/Elena-Gonzalez.jpg'
 import imgRocioBaide from '../../assets/Images/doctors/Rocio-Baide.jpg'
 import imgCynthiaInfante from '../../assets/Images/doctors/Cynthia-Infante.jpg'
+import imgMariaVictoria from '../../assets/Images/doctors/maria-victoria.jpg'
 
 const specialists = [
   {
@@ -51,6 +52,15 @@ const specialists = [
     rating: 4.8,
     bio: 'Comprometida con la salud hormonal femenina y el bienestar integral de la mujer.',
     photo: imgCynthiaInfante,
+  },
+  {
+    id: 6,
+    name: 'Dra. María Victoria',
+    specialty: 'Ginecología',
+    country: 'México',
+    rating: 4.8,
+    bio: 'Dedicada al cuidado integral de la mujer, con un enfoque cercano y empático en cada consulta.',
+    photo: imgMariaVictoria,
   },
 ]
 
