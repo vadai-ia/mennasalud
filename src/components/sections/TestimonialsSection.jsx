@@ -6,14 +6,14 @@ const testimonials = [
     id: 1,
     name: 'María G.',
     location: 'México',
-    text: 'Por primera vez un médico me escuchó de verdad. Entendí qué estaba viviendo y cómo manejarlo. Menna cambió mi calidad de vida completamente.',
+    text: 'Por primera vez una doctora me escuchó de verdad. Entendí qué estaba viviendo y cómo manejarlo. Menna cambió mi calidad de vida completamente.',
     rating: 5,
   },
   {
     id: 2,
     name: 'Carla M.',
-    location: 'Argentina',
-    text: 'Llevaba años con síntomas que nadie explicaba. En mi primera consulta con la Dra. Torres ya tenía un plan claro. No puedo creer que esperé tanto.',
+    location: 'México',
+    text: 'Llevaba años con síntomas que nadie explicaba. En mi primera consulta ya tenía un plan claro. No puedo creer que esperé tanto.',
     rating: 5,
   },
   {
@@ -26,7 +26,7 @@ const testimonials = [
   {
     id: 4,
     name: 'Lucía R.',
-    location: 'España',
+    location: 'México',
     text: 'Acceder a una especialista de este nivel de forma tan sencilla y en mi idioma fue un alivio enorme. El seguimiento es excelente.',
     rating: 5,
   },
