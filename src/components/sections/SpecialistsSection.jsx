@@ -13,7 +13,7 @@ const specialists = [
     specialty: 'Ginecóloga',
     country: 'México',
     rating: 4.8,
-    bio: 'Especialista en menopausia y terapia hormonal con 12 años de experiencia.',
+    bio: 'Especialista en menopausia y cuidado femenino. Te acompaño en un espacio profesional, humano y seguro en cada etapa de tu vida. Mi enfoque está en escucharte, ayudarte a sentirte mejor y cuidar tu salud hormonal con atención especializada y personalizada.',
     photo: imgDaniaGalvez,
   },
   {
@@ -22,7 +22,7 @@ const specialists = [
     specialty: 'Ginecóloga',
     country: 'Colombia',
     rating: 4.8,
-    bio: 'Enfocada en desequilibrios hormonales y salud tiroidea en mujeres.',
+    bio: 'Ginecóloga experta en menopausia, apasionada por el bienestar integral de la mujer en esta etapa de la vida. Acompaño a mis pacientes con un enfoque humano, actualizado y personalizado, brindando herramientas para vivir una menopausia saludable, plena y con calidad de vida.',
     photo: imgDianaChacon,
   },
   {
@@ -31,7 +31,7 @@ const specialists = [
     specialty: 'Ginecóloga',
     country: 'México',
     rating: 4.8,
-    bio: 'Combina medicina convencional y funcional para el bienestar hormonal integral.',
+    bio: 'Ginecóloga y especialista en Urología Ginecológica. Acompaño a la mujer en cada etapa de su vida, con especial enfoque en la menopausia y el bienestar íntimo. Experta en piso pélvico, incontinencia urinaria y salud urogenital. Atención integral, cercana y basada en evidencia.',
     photo: imgElenaGonzalez,
   },
   {
@@ -40,7 +40,7 @@ const specialists = [
     specialty: 'Ginecóloga',
     country: 'México y Honduras',
     rating: 4.8,
-    bio: 'Especialista en perimenopausia y salud reproductiva de la mujer adulta.',
+    bio: 'Ginecóloga especializada en menopausia y salud hormonal, con enfoque integral y basado en evidencia para el bienestar femenino.',
     photo: imgRocioBaide,
   },
   {
