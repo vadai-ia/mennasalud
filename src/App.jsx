@@ -1,7 +1,5 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import LandingPage from './pages/LandingPage'
@@ -26,16 +24,6 @@ export default function App() {
       </Routes>
       <Footer />
       <WhatsAppButton />
-      <Analytics
-        beforeSend={(event) => {
-          // Strip sensitive query params from URLs
-          const url = new URL(event.url, window.location.origin)
-          const sensitiveParams = ['email', 'name', 'phone', 'token', 'session']
-          sensitiveParams.forEach((p) => url.searchParams.delete(p))
-          return { ...event, url: url.pathname + url.search }
-        }}
-      />
-      <SpeedInsights />
     </BrowserRouter>
   )
 }
