@@ -5,7 +5,8 @@ const plans = [
   {
     id: 'primera',
     title: 'Consulta primera vez',
-    price: '$1,500',
+    originalPrice: '$1,500',
+    price: '$1,200',
     currency: 'MXN',
     features: [
       'Evaluación médica completa',
@@ -20,7 +21,8 @@ const plans = [
   {
     id: 'seguimiento',
     title: 'Consulta de seguimiento',
-    price: '$1,200',
+    originalPrice: '$1,200',
+    price: '$1,000',
     currency: 'MXN',
     features: [
       'Evaluación de progreso',
@@ -67,10 +69,13 @@ export default function PlansSection() {
             >
               <div className={styles.cardTop}>
                 <h3 className={styles.planTitle}>{plan.title}</h3>
-                <p className={styles.price}>
-                  {plan.price}
-                  <span className={styles.currency}>{plan.currency}</span>
-                </p>
+                <div className={styles.priceBlock}>
+                  <span className={styles.originalPrice}>{plan.originalPrice}</span>
+                  <p className={styles.price}>
+                    {plan.price}
+                    <span className={styles.currency}>{plan.currency}</span>
+                  </p>
+                </div>
               </div>
 
               <ul className={styles.features} role="list">
