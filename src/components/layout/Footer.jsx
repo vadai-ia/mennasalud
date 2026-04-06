@@ -59,9 +59,14 @@ export default function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <p className={styles.copy}>© 2026 Menna. Todos los derechos reservados.</p>
-        <Link to="/terminos-y-condiciones" className={styles.termsLink}>
-          Términos y condiciones
-        </Link>
+        <div className={styles.legalLinks}>
+          <Link to="/terminos-y-condiciones" className={styles.termsLink}>
+            Términos y condiciones
+          </Link>
+          <Link to="/privacidad" className={styles.termsLink}>
+            Privacidad
+          </Link>
+        </div>
       </div>
     </footer>
   )
