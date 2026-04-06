@@ -4,11 +4,11 @@ import styles from './Navbar.module.css'
 import logoGreen from '../../assets/logos/logo-green.svg'
 
 const navLinks = [
-  { label: 'Síntomas',              href: '#propuesta'        },
-  { label: 'Nuestra Historia',      href: '#nuestra-historia' },
-  { label: 'Cómo funciona',         href: '#como-funciona'    },
-  { label: 'Especialistas',         href: '#especialistas'    },
-  { label: 'Preguntas frecuentes',  href: '#faq'              },
+  { label: 'Síntomas',              href: '/#propuesta'        },
+  { label: 'Nuestra Historia',      href: '/#nuestra-historia' },
+  { label: 'Cómo funciona',         href: '/#como-funciona'    },
+  { label: 'Especialistas',         href: '/#especialistas'    },
+  { label: 'Preguntas frecuentes',  href: '/#faq'              },
 ]
 
 export default function Navbar() {
@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Inner bar */}
         <div className={styles.inner}>
           {/* Logo */}
-          <a href="#" className={styles.logo} aria-label="Menna inicio">
+          <a href="/" className={styles.logo} aria-label="Menna inicio">
             <img src={logoGreen} alt="Menna" className={styles.logoImg} />
           </a>
 
