@@ -1,4 +1,5 @@
 import Button from '../ui/Button'
+import { events } from '../../lib/analytics'
 import styles from './HeroSection.module.css'
 import heroWomen from '../../assets/Images/hero/hero-women.png'
 
@@ -43,7 +44,7 @@ export default function HeroSection() {
 
           {/* CTA */}
           <div className={styles.actions}>
-            <Button href="https://citas.mennasalud.com/book" size="lg" className={styles.ctaButton}>
+            <Button href="https://citas.mennasalud.com/book" size="lg" className={styles.ctaButton} onClick={events.heroCta}>
               Agenda tu consulta ahora&nbsp;→
             </Button>
           </div>

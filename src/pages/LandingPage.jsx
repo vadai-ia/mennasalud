@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useScrollTracking } from '../lib/useScrollTracking'
 
 import HeroSection from '../components/sections/HeroSection'
 import SymptomsSection from '../components/sections/SymptomsSection'
@@ -20,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function LandingPage() {
   const pageRef = useRef(null)
+  useScrollTracking()
 
   useLayoutEffect(() => {
     const prefersReducedMotion = window.matchMedia(

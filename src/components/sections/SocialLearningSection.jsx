@@ -1,3 +1,4 @@
+import { events } from '../../lib/analytics'
 import styles from './SocialLearningSection.module.css'
 import reel1 from '../../assets/Images/reels/reel-1.jpg'
 import reel2 from '../../assets/Images/reels/reel-2.jpg'
@@ -48,6 +49,7 @@ export default function SocialLearningSection() {
               rel="noopener noreferrer"
               className={styles.card}
               aria-label="Ver reel en Instagram"
+              onClick={() => events.reelClicked(reel.id)}
             >
               <img
                 src={reel.thumbnail}

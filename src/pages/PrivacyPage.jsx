@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { events } from '../lib/analytics'
 import styles from './TermsPage.module.css'
 
 const sections = [
@@ -82,6 +83,7 @@ function renderBlocks(blocks) {
 export default function PrivacyPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
+    events.privacyViewed()
 
     document.title = 'Aviso de privacidad | Menna Salud'
 

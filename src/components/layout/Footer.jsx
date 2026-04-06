@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { events } from '../../lib/analytics'
 import styles from './Footer.module.css'
 import logoWhite from '../../assets/logos/logo-white.svg'
 
@@ -60,10 +61,10 @@ export default function Footer() {
       <div className={`container ${styles.bottom}`}>
         <p className={styles.copy}>© 2026 Menna. Todos los derechos reservados.</p>
         <div className={styles.legalLinks}>
-          <Link to="/terminos-y-condiciones" className={styles.termsLink}>
+          <Link to="/terminos-y-condiciones" className={styles.termsLink} onClick={() => events.footerLegalClicked('terminos')}>
             Términos y condiciones
           </Link>
-          <Link to="/privacidad" className={styles.termsLink}>
+          <Link to="/privacidad" className={styles.termsLink} onClick={() => events.footerLegalClicked('privacidad')}>
             Privacidad
           </Link>
         </div>

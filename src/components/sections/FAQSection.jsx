@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { events } from '../../lib/analytics'
 import styles from './FAQSection.module.css'
 
 const faqs = [
@@ -100,7 +101,11 @@ function FAQItem({ question, content, open, onToggle }) {
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null)
 
-  const toggle = (i) => setOpenIndex(openIndex === i ? null : i)
+  const toggle = (i) => {
+    const isOpening = openIndex !== i
+    setOpenIndex(isOpening ? i : null)
+    if (isOpening) events.faqExpanded(faqs[i].q)
+  }
 
   return (
     <section className={`section ${styles.section}`} id="faq">
