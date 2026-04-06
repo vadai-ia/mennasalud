@@ -68,23 +68,25 @@
 
 .priceBlock {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
 }
 
 .originalPrice {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 36px;
   font-weight: 400;
   color: #a3a9b3;
   text-decoration: line-through;
   text-decoration-thickness: 1.5px;
   line-height: 1;
+  opacity: 0.6;
 }
 
 .price {
   font-family: var(--font-heading);
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 400;
   color: var(--color-primary);
   line-height: 1;
