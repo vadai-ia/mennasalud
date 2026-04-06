@@ -1,0 +1,131 @@
+/* ── Hero ─────────────────────────────────────────────── */
+.hero {
+  background-color: var(--color-primary);
+  padding-top: 140px;
+  padding-bottom: var(--space-2xl);
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 400;
+  color: var(--color-white-100);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-md);
+}
+
+.heroDate {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-white-80);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Content section ─────────────────────────────────── */
+.content {
+  background-color: var(--color-base);
+  padding-block: var(--space-2xl);
+}
+
+/* Reading column — centered for readability */
+.reading {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* ── Term sections ───────────────────────────────────── */
+.termSection {
+  margin-bottom: var(--space-xl);
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Body text ───────────────────────────────────────── */
+.body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-md);
+}
+
+.bodyFinal {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-lg);
+  font-weight: 500;
+}
+
+/* ── Lists ───────────────────────────────────────────── */
+.list {
+  list-style: disc;
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.listItem {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+}
+
+.listItem::marker {
+  color: var(--color-primary);
+}
+
+/* ── Consent divider ─────────────────────────────────── */
+.consentDivider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(69, 85, 108, 0.15);
+  margin-bottom: var(--space-xl);
+}
+
+.consentTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-sm);
+}
+
+.consentSubtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-text-60);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: var(--space-xl);
+  }
+
+  .content {
+    padding-block: var(--space-xl);
+  }
+
+  .termSection {
+    margin-bottom: var(--space-lg);
+  }
+}

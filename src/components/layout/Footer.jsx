@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 import logoWhite from '../../assets/logos/logo-white.svg'
 
@@ -58,6 +59,9 @@ export default function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <p className={styles.copy}>© 2026 Menna. Todos los derechos reservados.</p>
+        <Link to="/terminos-y-condiciones" className={styles.termsLink}>
+          Términos y condiciones
+        </Link>
       </div>
     </footer>
   )

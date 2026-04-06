@@ -70,11 +70,26 @@
 
 .bottom {
   padding-top: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
 }
 
 .copy {
   font-size: var(--text-small);
   color: rgba(255, 255, 255, 0.5);
+}
+
+.termsLink {
+  font-size: var(--text-small);
+  color: rgba(255, 255, 255, 0.5);
+  transition: color var(--transition-fast);
+}
+
+.termsLink:hover {
+  color: var(--color-white-100);
 }
 
 @media (max-width: 768px) {
