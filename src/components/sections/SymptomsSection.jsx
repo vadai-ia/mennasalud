@@ -1,4 +1,5 @@
-import Button from '../ui/Button'
+import { useState } from 'react'
+import { events } from '../../lib/analytics'
 import styles from './SymptomsSection.module.css'
 import iconBochornos from '../../assets/icons/bochornos.svg'
 import iconInsomnio from '../../assets/icons/insomnio.svg'
@@ -28,7 +29,27 @@ const symptoms = [
   { label: 'Niebla mental',         icon: iconNieblaMental        },
 ]
 
+const INITIAL_VISIBLE = 8
+
 export default function SymptomsSection() {
+  const [selected, setSelected] = useState(new Set())
+  const [showAll, setShowAll] = useState(false)
+
+  const toggle = (label) => {
+    setSelected((prev) => {
+      const next = new Set(prev)
+      if (next.has(label)) {
+        next.delete(label)
+      } else {
+        next.add(label)
+      }
+      return next
+    })
+  }
+
+  const visible = showAll ? symptoms : symptoms.slice(0, INITIAL_VISIBLE)
+  const hasSelection = selected.size > 0
+
   return (
     <section className={styles.section} id="propuesta">
       <div className="container">
@@ -40,27 +61,48 @@ export default function SymptomsSection() {
             <em className={styles.headingEmphasis}>no estás sola</em>
           </h2>
           <p className={styles.subtext}>
-            Muchas mujeres viven cambios que no logran entender ni explicar.<br className={styles.br} />
-            Y lo más difícil no es solo lo que sientes... es no saber por qué.
+            Selecciona los síntomas que estás experimentando.
           </p>
         </div>
 
-        {/* Grid */}
-        <ul className={styles.grid} role="list">
-          {symptoms.map((s) => (
-            <li key={s.label} className={styles.card}>
-              <div className={styles.icon} aria-hidden="true">
-                <img src={s.icon} alt="" />
-              </div>
-              <span className={styles.label}>{s.label}</span>
-            </li>
+        {/* Chips */}
+        <div className={styles.chips} role="list">
+          {visible.map((s) => (
+            <button
+              key={s.label}
+              role="listitem"
+              className={`${styles.chip} ${selected.has(s.label) ? styles.chipSelected : ''}`}
+              onClick={() => toggle(s.label)}
+              aria-pressed={selected.has(s.label)}
+            >
+              <img src={s.icon} alt="" className={styles.chipIcon} aria-hidden="true" />
+              <span>{s.label}</span>
+            </button>
           ))}
-        </ul>
+        </div>
+
+        {/* Show more */}
+        {!showAll && (
+          <button className={styles.showMore} onClick={() => setShowAll(true)}>
+            Ver más síntomas
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        )}
 
         {/* CTA */}
         <div className={styles.cta}>
-          <a href="https://citas.mennasalud.com/book" className={styles.ctaLink}>
-            <span className={styles.ctaMain}>Tengo varios de estos síntomas</span>
+          <a
+            href="https://citas.mennasalud.com/book"
+            className={`${styles.ctaLink} ${hasSelection ? styles.ctaActive : ''}`}
+            onClick={events.heroCta}
+          >
+            <span className={styles.ctaMain}>
+              {hasSelection
+                ? `Tengo ${selected.size} de estos síntomas`
+                : 'Tengo varios de estos síntomas'}
+            </span>
             <span className={styles.ctaSub}>Quiero hablar con una especialista</span>
           </a>
         </div>
