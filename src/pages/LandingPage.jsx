@@ -67,14 +67,6 @@ export default function LandingPage() {
       </section>
 
       <section className="reveal-section">
-        <ExplanationSection />
-      </section>
-
-      <section className="reveal-section">
-        <OriginSection />
-      </section>
-
-      <section className="reveal-section">
         <MarqueeSection />
       </section>
 
@@ -104,6 +96,14 @@ export default function LandingPage() {
 
       <section className="reveal-section">
         <FAQSection />
+      </section>
+
+      <section className="reveal-section">
+        <OriginSection />
+      </section>
+
+      <section className="reveal-section">
+        <ExplanationSection />
       </section>
 
       <section className="reveal-section">

@@ -6,8 +6,7 @@ const plans = [
   {
     id: 'primera',
     title: 'Consulta primera vez',
-    originalPrice: '$1,500',
-    price: '$1,200',
+    price: '$1,500',
     currency: 'MXN',
     features: [
       'Evaluación médica completa',
@@ -16,14 +15,14 @@ const plans = [
       'Consulta en línea privada',
       '1 hora de duración',
     ],
-    cta: 'Agenda tu consulta',
+    cta: 'Agenda tu primera consulta',
     ctaVariant: 'primary',
+    disabled: false,
   },
   {
     id: 'seguimiento',
     title: 'Consulta de seguimiento',
-    originalPrice: '$1,200',
-    price: '$1,000',
+    price: '$1,200',
     currency: 'MXN',
     features: [
       'Evaluación de progreso',
@@ -32,8 +31,9 @@ const plans = [
       'Consulta en línea privada',
       '40 min de duración',
     ],
-    cta: 'Agenda tu consulta',
+    cta: 'Disponible después de tu primera consulta',
     ctaVariant: 'outline',
+    disabled: true,
   },
 ]
 
@@ -70,13 +70,10 @@ export default function PlansSection() {
             >
               <div className={styles.cardTop}>
                 <h3 className={styles.planTitle}>{plan.title}</h3>
-                <div className={styles.priceBlock}>
-                  <span className={styles.originalPrice}>{plan.originalPrice}</span>
-                  <p className={styles.price}>
-                    {plan.price}
-                    <span className={styles.currency}>{plan.currency}</span>
-                  </p>
-                </div>
+                <p className={styles.price}>
+                  {plan.price}
+                  <span className={styles.currency}>{plan.currency}</span>
+                </p>
               </div>
 
               <ul className={styles.features} role="list">
@@ -88,15 +85,25 @@ export default function PlansSection() {
                 ))}
               </ul>
 
-              <Button
-                href="https://citas.mennasalud.com/book"
-                variant={plan.ctaVariant === 'primary' ? 'primary' : 'secondary'}
-                size="lg"
-                className={styles.planCta}
-                onClick={() => events.pricingCta(plan.id)}
-              >
-                {plan.cta}
-              </Button>
+              {plan.disabled ? (
+                <button
+                  className={`${styles.planCta} ${styles.planCtaDisabled}`}
+                  disabled
+                  aria-disabled="true"
+                >
+                  {plan.cta}
+                </button>
+              ) : (
+                <Button
+                  href="https://citas.mennasalud.com/book"
+                  variant="primary"
+                  size="lg"
+                  className={styles.planCta}
+                  onClick={() => events.pricingCta(plan.id)}
+                >
+                  {plan.cta}
+                </Button>
+              )}
             </div>
           ))}
         </div>
