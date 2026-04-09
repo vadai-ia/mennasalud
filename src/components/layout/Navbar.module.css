@@ -13,14 +13,12 @@
 .floatingBar {
   pointer-events: auto;
   background-color: var(--color-base);
-  border-radius: var(--radius-md); /* 20px */
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
 
-/* Bottom corners stay rounded when mobile menu is closed;
-   flatten only visually — overflow:hidden on floatingBar handles clipping */
 .floatingBar.menuOpen {
   border-bottom-left-radius: var(--radius-md);
   border-bottom-right-radius: var(--radius-md);
@@ -33,6 +31,7 @@
   justify-content: space-between;
   height: 64px;
   padding-inline: var(--space-xl);
+  padding-right: 32px;
   gap: var(--space-xl);
 }
 
@@ -73,6 +72,7 @@
 
 .cta {
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Hamburger */
@@ -117,6 +117,11 @@
   margin-top: var(--space-lg);
 }
 
+/* ── Floating mobile CTA ─────────────────────────────── */
+.floatingCta {
+  display: none;
+}
+
 /* ─── Responsive ──────────────────────────────── */
 
 /* Tablet: reduce side margin */
@@ -126,9 +131,10 @@
   }
 }
 
-/* Mobile: 14px from top, minimal side margin, show hamburger */
+/* Mobile: non-sticky navbar + floating CTA */
 @media (max-width: 900px) {
   .header {
+    position: absolute;
     top: 14px;
     padding-inline: 16px;
   }
@@ -142,13 +148,32 @@
     display: flex;
   }
 
-  /* Slightly smaller logo on mobile — SVG stays sharp at any size */
   .logoImg {
     height: 24px;
   }
 
-  /* Slightly smaller hamburger bars */
   .bar {
     width: 18px;
+  }
+
+  /* Floating CTA at bottom of screen */
+  .floatingCta {
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 200;
+    padding: 16px;
+    background-color: var(--color-primary);
+    color: var(--color-white-100);
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    pointer-events: auto;
   }
 }

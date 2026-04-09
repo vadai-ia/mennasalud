@@ -74,6 +74,11 @@ export default function Navbar() {
           </nav>
         )}
       </div>
+
+      {/* Floating CTA — mobile only */}
+      <a href="https://citas.mennasalud.com/book" className={styles.floatingCta}>
+        Agenda tu consulta
+      </a>
     </header>
   )
 }
