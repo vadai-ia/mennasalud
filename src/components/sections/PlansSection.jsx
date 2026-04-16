@@ -6,7 +6,7 @@ const plans = [
   {
     id: 'primera',
     title: 'Consulta primera vez',
-    price: '$1,500',
+    price: '$1,200',
     currency: 'MXN',
     features: [
       'Evaluación médica completa',
@@ -22,7 +22,7 @@ const plans = [
   {
     id: 'seguimiento',
     title: 'Consulta de seguimiento',
-    price: '$1,200',
+    price: '$1,000',
     currency: 'MXN',
     features: [
       'Evaluación de progreso',
