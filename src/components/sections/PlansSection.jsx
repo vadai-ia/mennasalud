@@ -95,7 +95,7 @@ export default function PlansSection() {
                 </button>
               ) : (
                 <Button
-                  href="https://citas.mennasalud.com/book"
+                  href="https://wa.me/525523114388"
                   variant="primary"
                   size="lg"
                   className={styles.planCta}
@@ -115,7 +115,7 @@ export default function PlansSection() {
             Empieza aquí descubre lo que realmente está pasando en tu cuerpo y aprende cómo
             tomar control de esta etapa con nuestros recursos digitales introductorios.
           </p>
-          <a href="https://citas.mennasalud.com/tienda" target="_blank" rel="noopener noreferrer" className={styles.ebooksLink} onClick={events.ebooksCta}>
+          <a href="https://wa.me/525523114388" target="_blank" rel="noopener noreferrer" className={styles.ebooksLink} onClick={events.ebooksCta}>
             Conocer ebooks
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

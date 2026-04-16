@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className={styles.cta}>
-            <Button href="https://citas.mennasalud.com/book" size="md">
+            <Button href="https://wa.me/525523114388" size="md">
               Agenda tu consulta
             </Button>
           </div>
@@ -67,7 +67,7 @@ export default function Navbar() {
               </a>
             ))}
             <div className={styles.mobileCta}>
-              <Button href="https://citas.mennasalud.com/book" size="md">
+              <Button href="https://wa.me/525523114388" size="md">
                 Agenda tu consulta
               </Button>
             </div>

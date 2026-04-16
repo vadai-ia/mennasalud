@@ -44,7 +44,7 @@ export default function HeroSection() {
 
           {/* CTA */}
           <div className={styles.actions}>
-            <Button href="https://citas.mennasalud.com/book" size="lg" className={styles.ctaButton} onClick={events.heroCta}>
+            <Button href="https://wa.me/525523114388" size="lg" className={styles.ctaButton} onClick={events.heroCta}>
               Agenda tu primera consulta
             </Button>
           </div>

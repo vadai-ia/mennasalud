@@ -94,7 +94,7 @@ export default function SymptomsSection() {
         {/* CTA */}
         <div className={styles.cta}>
           <a
-            href="https://citas.mennasalud.com/book"
+            href="https://wa.me/525523114388"
             className={`${styles.ctaLink} ${hasSelection ? styles.ctaActive : ''}`}
             onClick={events.heroCta}
           >
