@@ -15,7 +15,6 @@ import ImageBreakSection from '../components/sections/ImageBreakSection'
 import GrowthSection from '../components/sections/GrowthSection'
 import TestimonialsSection from '../components/sections/TestimonialsSection'
 import FAQSection from '../components/sections/FAQSection'
-import SocialLearningSection from '../components/sections/SocialLearningSection'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -104,10 +103,6 @@ export default function LandingPage() {
 
       <section className="reveal-section">
         <ExplanationSection />
-      </section>
-
-      <section className="reveal-section">
-        <SocialLearningSection />
       </section>
     </main>
   )
