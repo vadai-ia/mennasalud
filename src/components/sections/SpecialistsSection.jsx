@@ -10,15 +10,6 @@ import imgMariaVictoria from '../../assets/Images/doctors/maria-victoria.jpg'
 
 const specialists = [
   {
-    id: 1,
-    name: 'Dra. Elena González',
-    specialty: 'Ginecología y Urología Ginecológica',
-    country: 'México',
-    rating: 4.8,
-    bio: 'Acompaño a la mujer en cada etapa de su vida, con especial enfoque en la menopausia y el bienestar íntimo. Experta en piso pélvico, incontinencia urinaria y salud urogenital.',
-    photo: imgElenaGonzalez,
-  },
-  {
     id: 2,
     name: 'Dra. Dania Gálvez',
     specialty: 'Ginecóloga Obstetra',
@@ -26,15 +17,6 @@ const specialists = [
     rating: 4.8,
     bio: 'Especialista en menopausia y cuidado femenino. Te acompaño en un espacio profesional, humano y seguro en cada etapa de tu vida.',
     photo: imgDaniaGalvez,
-  },
-  {
-    id: 3,
-    name: 'Dra. Cynthia Infante',
-    specialty: 'Ginecóloga',
-    country: 'México',
-    rating: 4.8,
-    bio: 'Comprometida con la salud hormonal femenina y el bienestar integral de la mujer.',
-    photo: imgCynthiaInfante,
   },
   {
     id: 4,
