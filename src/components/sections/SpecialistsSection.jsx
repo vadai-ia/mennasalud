@@ -1,12 +1,10 @@
 import { useRef } from 'react'
 import StarRating from '../ui/StarRating'
 import styles from './SpecialistsSection.module.css'
-import imgDaniaGalvez from '../../assets/Images/doctors/Dania-Galvez.jpg'
-import imgDianaChacon from '../../assets/Images/doctors/Diana-Chacon.jpg'
-import imgElenaGonzalez from '../../assets/Images/doctors/Elena-Gonzalez.jpg'
-import imgRocioBaide from '../../assets/Images/doctors/Rocio-Baide.jpg'
-import imgCynthiaInfante from '../../assets/Images/doctors/Cynthia-Infante.jpg'
-import imgMariaVictoria from '../../assets/Images/doctors/maria-victoria.jpg'
+import imgDaniaGalvez from '../../assets/Images/doctors/Dania-galvez.png'
+import imgDianaChacon from '../../assets/Images/doctors/Diana_Chacon.png'
+import imgRocioBaide from '../../assets/Images/doctors/Rocio-Baide.png'
+import imgMariaVictoria from '../../assets/Images/doctors/maria-victoria.png'
 
 const specialists = [
   {
