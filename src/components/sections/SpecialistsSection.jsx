@@ -5,6 +5,8 @@ import imgDaniaGalvez from '../../assets/Images/doctors/Dania-galvez.png'
 import imgDianaChacon from '../../assets/Images/doctors/Diana_Chacon.png'
 import imgRocioBaide from '../../assets/Images/doctors/Rocio-Baide.png'
 import imgMariaVictoria from '../../assets/Images/doctors/maria-victoria.png'
+import imgAngelicaHuante from '../../assets/Images/doctors/Angelica-Huante.jpeg'
+import imgMiriamGarcia from '../../assets/Images/doctors/Miriam_Garcia.jpeg'
 
 const specialists = [
   {
@@ -42,6 +44,24 @@ const specialists = [
     rating: 4.8,
     bio: 'Dedicada al cuidado integral de la mujer, con un enfoque cercano y empático en cada consulta.',
     photo: imgMariaVictoria,
+  },
+  {
+    id: 7,
+    name: 'Dra. Angélica Huante',
+    specialty: 'Ginecología',
+    country: 'México',
+    rating: 4.8,
+    bio: 'Especialista en salud hormonal femenina, comprometida con acompañar a la mujer en cada etapa con una atención cálida y profesional.',
+    photo: imgAngelicaHuante,
+  },
+  {
+    id: 8,
+    name: 'Dra. Miriam García',
+    specialty: 'Ginecología',
+    country: 'México',
+    rating: 4.8,
+    bio: 'Apasionada por el bienestar femenino, con enfoque integral en menopausia y salud hormonal para acompañarte con confianza.',
+    photo: imgMiriamGarcia,
   },
 ]
 
