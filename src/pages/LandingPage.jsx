@@ -98,11 +98,11 @@ export default function LandingPage() {
       </section>
 
       <section className="reveal-section">
-        <OriginSection />
+        <ExplanationSection />
       </section>
 
       <section className="reveal-section">
-        <ExplanationSection />
+        <OriginSection />
       </section>
     </main>
   )
