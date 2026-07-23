@@ -9,6 +9,8 @@ const footerLinks = [
   { label: 'Especialistas', href: '#especialistas' },
   { label: 'Comunidad', href: '#comunidad' },
   { label: 'Preguntas frecuentes', href: '#faq' },
+  { label: 'Términos y condiciones', to: '/terminos-y-condiciones', event: 'terminos' },
+  { label: 'Privacidad', to: '/privacidad', event: 'privacidad' },
 ]
 
 export default function Footer() {
@@ -24,11 +26,22 @@ export default function Footer() {
 
         {/* Links */}
         <nav className={styles.links} aria-label="Pie de página">
-          {footerLinks.map((link) => (
-            <a key={link.label} href={link.href} className={styles.link}>
-              {link.label}
-            </a>
-          ))}
+          {footerLinks.map((link) =>
+            link.to ? (
+              <Link
+                key={link.label}
+                to={link.to}
+                className={styles.link}
+                onClick={() => events.footerLegalClicked(link.event)}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a key={link.label} href={link.href} className={styles.link}>
+                {link.label}
+              </a>
+            )
+          )}
         </nav>
 
         {/* Social */}
@@ -60,14 +73,6 @@ export default function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <p className={styles.copy}>© 2026 Menna. Todos los derechos reservados.</p>
-        <div className={styles.legalLinks}>
-          <Link to="/terminos-y-condiciones" className={styles.termsLink} onClick={() => events.footerLegalClicked('terminos')}>
-            Términos y condiciones
-          </Link>
-          <Link to="/privacidad" className={styles.termsLink} onClick={() => events.footerLegalClicked('privacidad')}>
-            Privacidad
-          </Link>
-        </div>
       </div>
     </footer>
   )
