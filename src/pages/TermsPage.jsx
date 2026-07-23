@@ -142,6 +142,7 @@ export default function TermsPage() {
               <li className={styles.listItem}>Acepta que la información proporcionada es su responsabilidad</li>
               <li className={styles.listItem}>Entiende que MENNA no presta servicios médicos</li>
               <li className={styles.listItem}>Reconoce que la profesional es responsable de la consulta</li>
+              <li className={styles.listItem}>Entiende que no es un servicio de emergencia</li>
             </ul>
 
             <p className={styles.bodyFinal}>Al continuar, la usuaria acepta este consentimiento.</p>
