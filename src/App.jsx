@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer'
 import LandingPage from './pages/LandingPage'
 import TermsPage from './pages/TermsPage'
 import PrivacyPage from './pages/PrivacyPage'
+import CredentialsPage from './pages/CredentialsPage'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import CookieBanner from './components/ui/CookieBanner'
 import { initClarity } from './lib/clarity'
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/terminos-y-condiciones" element={<TermsPage />} />
         <Route path="/privacidad" element={<PrivacyPage />} />
+        <Route path="/credenciales" element={<CredentialsPage />} />
       </Routes>
       <Footer />
       <WhatsAppButton />
