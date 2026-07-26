@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Link } from 'react-router-dom'
 import StarRating from '../ui/StarRating'
 import styles from './SpecialistsSection.module.css'
 import imgDaniaGalvez from '../../assets/Images/doctors/Dania-galvez.png'
@@ -17,6 +18,9 @@ const specialists = [
     rating: 4.8,
     bio: 'Especialista en menopausia y cuidado femenino. Te acompaño en un espacio profesional, humano y seguro en cada etapa de tu vida.',
     photo: imgDaniaGalvez,
+    cedulas: [
+      { label: 'Cédula Médico Cirujano', number: '12253855' },
+    ],
   },
   {
     id: 4,
@@ -26,6 +30,10 @@ const specialists = [
     rating: 4.8,
     bio: 'Ginecóloga especializada en menopausia y salud hormonal, con enfoque integral y basado en evidencia para el bienestar femenino.',
     photo: imgRocioBaide,
+    cedulas: [
+      { label: 'Cédula Médico Cirujano (HN)', number: '14753678' },
+      { label: 'Cédula Especialidad Gineco. y Obst. (MX)', number: '15177835' },
+    ],
   },
   {
     id: 5,
@@ -35,6 +43,9 @@ const specialists = [
     rating: 4.8,
     bio: 'Ginecóloga experta en menopausia, apasionada por el bienestar integral de la mujer en esta etapa de la vida.',
     photo: imgDianaChacon,
+    cedulas: [
+      { label: 'Registro RETHUS (CO)', number: '1085304966' },
+    ],
   },
   {
     id: 6,
@@ -44,6 +55,9 @@ const specialists = [
     rating: 4.8,
     bio: 'Dedicada al cuidado integral de la mujer, con un enfoque cercano y empático en cada consulta.',
     photo: imgMariaVictoria,
+    cedulas: [
+      { label: 'Cédula Estatal Jalisco', number: 'PEJ 397119' },
+    ],
   },
   {
     id: 7,
@@ -53,6 +67,9 @@ const specialists = [
     rating: 4.8,
     bio: 'Especialista en salud hormonal femenina, comprometida con acompañar a la mujer en cada etapa con una atención cálida y profesional.',
     photo: imgAngelicaHuante,
+    cedulas: [
+      { label: 'Cédula Especialidad Gineco. y Obst.', number: '15185134' },
+    ],
   },
   {
     id: 8,
@@ -62,6 +79,9 @@ const specialists = [
     rating: 4.8,
     bio: 'Apasionada por el bienestar femenino, con enfoque integral en menopausia y salud hormonal para acompañarte con confianza.',
     photo: imgMiriamGarcia,
+    cedulas: [
+      { label: 'Cédula Médico Cirujano', number: '15247846' },
+    ],
   },
 ]
 
@@ -121,6 +141,16 @@ export default function SpecialistsSection() {
                 <p className={styles.specialty}>{doc.specialty}</p>
                 <p className={styles.bio}>{doc.bio}</p>
                 <StarRating rating={doc.rating} />
+                {doc.cedulas && doc.cedulas.length > 0 && (
+                  <ul className={styles.cedulaList} aria-label="Cédulas profesionales">
+                    {doc.cedulas.map((c) => (
+                      <li key={c.number} className={styles.cedulaItem}>
+                        <span className={styles.cedulaLabel}>{c.label}:</span>{' '}
+                        <span className={styles.cedulaNumber}>{c.number}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </article>
           ))}
@@ -136,6 +166,17 @@ export default function SpecialistsSection() {
             <polyline points="9 6 15 12 9 18" />
           </svg>
         </button>
+      </div>
+
+      <div className="container">
+        <p className={styles.credentialsLink}>
+          Consulta todas las cédulas y credenciales del equipo médico en{' '}
+          <Link to="/credenciales">Credenciales médicas</Link>. Las cédulas mexicanas se verifican en{' '}
+          <a href="https://www.gob.mx/cedulaprofesional" target="_blank" rel="noopener noreferrer">
+            gob.mx/cedulaprofesional
+          </a>
+          .
+        </p>
       </div>
 
     </section>
