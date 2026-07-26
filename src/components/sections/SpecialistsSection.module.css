@@ -180,3 +180,49 @@
     width: 78vw;
   }
 }
+
+/* ── Cédulas / credenciales inline en la tarjeta ─────── */
+.cedulaList {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(73, 121, 117, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+}
+
+.cedulaItem {
+  font-family: var(--font-body);
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(69, 85, 108, 0.72);
+}
+
+.cedulaLabel {
+  color: rgba(69, 85, 108, 0.55);
+}
+
+.cedulaNumber {
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+
+.credentialsLink {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(69, 85, 108, 0.65);
+  line-height: 1.6;
+}
+
+.credentialsLink a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.credentialsLink a:hover {
+  opacity: 0.8;
+}
