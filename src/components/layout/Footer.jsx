@@ -9,6 +9,7 @@ const footerLinks = [
   { label: 'Especialistas', href: '#especialistas' },
   { label: 'Comunidad', href: '#comunidad' },
   { label: 'Preguntas frecuentes', href: '#faq' },
+  { label: 'Credenciales médicas', to: '/credenciales', event: 'credenciales' },
   { label: 'Términos y condiciones', to: '/terminos-y-condiciones', event: 'terminos' },
   { label: 'Privacidad', to: '/privacidad', event: 'privacidad' },
 ]
